@@ -4,15 +4,15 @@ class Point:
         self.y = y
 
 
-world = set()
+world = [False] * (1001 * 1001)
 
 
 def mark_enemy(x, y):
-    world.add(1001 * x + y)
+    world[1000 * x + y] = True
 
 
 def enemy_is_here(x, y):
-    return (1001 * x + y) in world
+    return world[1000 * x + y]
 
 
 def count_in_grid(lt, rX, rY):
