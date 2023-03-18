@@ -4,6 +4,6 @@ for input in $(ls ./input-*.txt); do
   if [[ $expected -eq $actual ]]; then
     echo PASS
   else
-    echo FAILED
+    echo FAILED "$input" expected "$expected" actual "$actual"
   fi
 done
