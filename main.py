@@ -17,6 +17,7 @@ def count_in_grid(lt, rX, rY):
 
 
 N, rangeX, rangeY = map(int, input().split(' '))
+maxPossibleKill = (rangeX + 1) * (rangeY + 1)
 
 enemyBound = Point(0, 0)
 
@@ -30,5 +31,8 @@ maxKill = 0
 for ltX in range(enemyBound.x - rangeX + 1):
     for ltY in range(enemyBound.y - rangeY + 1):
         maxKill = max(maxKill, count_in_grid(Point(ltX, ltY), rangeX, rangeY))
+        if maxKill == maxPossibleKill:
+            print(maxKill)
+            exit(0)
 
 print(maxKill)
