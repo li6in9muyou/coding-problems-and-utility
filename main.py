@@ -7,11 +7,19 @@ class Point:
 world = [[False] * 1001 for i in range(1001)]
 
 
+def mark_enemy(x, y):
+    world[y][x] = True
+
+
+def enemy_is_here(x, y):
+    return world[x][y] is True
+
+
 def count_in_grid(lt, rX, rY):
     cnt = 0
     for y in range(rY + 1):
         for x in range(rX + 1):
-            if world[lt.y + y][lt.x + x] is True:
+            if enemy_is_here(lt.y + y, lt.x + x):
                 cnt += 1
     return cnt
 
@@ -23,7 +31,7 @@ enemyBound = Point(0, 0)
 
 for i in range(N):
     x, y = map(int, input().split(' '))
-    world[y][x] = True
+    mark_enemy(x, y)
     enemyBound.x = max(enemyBound.x, x)
     enemyBound.y = max(enemyBound.y, y)
 
