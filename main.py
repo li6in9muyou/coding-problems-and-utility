@@ -4,7 +4,7 @@ class Point:
         self.y = y
 
 
-world = [[False] * 1000 for i in range(1000)]
+world = [[False] * 1001 for i in range(1001)]
 
 
 def count_in_grid(lt, rX, rY):
