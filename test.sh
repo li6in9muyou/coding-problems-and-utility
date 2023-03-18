@@ -4,7 +4,7 @@ for input in ./test/input-*.txt; do
   actual=$(echo "$output" | head -n 1)
 
   if [[ $expected -eq  $actual ]]; then
-    echo PASS "$(echo "$output" | tail -n 1)"s
+    echo PASS "$(echo "$output" | tail -n 1)"s "$input"
   else
     echo FAILED "$input" expected "$expected" actual "$actual"
   fi
